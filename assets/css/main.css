@@ -29,8 +29,31 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+
+/* File: assets/css/main.css */
+
+/* Background Canvas Styling (UPDATED) */
+#backgroundCanvas {
+    position: fixed;
+    /* Ekrana göre sabitlenir */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Viewport genişliğinin %100'ü */
+    height: 100vh;
+    /* Viewport yüksekliğinin %100'ü */
+    z-index: -1;
+    /* Tüm içeriğin arkasına gönderir */
+    /* EN ÖNEMLİ KISIM AŞAĞIDA */
     background-color: var(--bg-dark);
+    /* Canvas'ın kendisinin bir arka plan rengi olmalı */
+}
+
+/* Sayfanın asıl body'sinin arka planını transparan yapıyoruz. 
+   Böylece arkadaki canvas'ı görebiliriz. */
+body {
+    /* ... (mevcut body stilleriniz burada) ... */
+    background-color: transparent;
     color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.6;
