@@ -393,3 +393,59 @@ section:last-of-type {
     font-size: 1.2rem;
     line-height: 1;
 }
+
+
+/* ---------------------------------- */
+/* 9. Focus / Education Section      */
+/* ---------------------------------- */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ekrana göre otomatik yerleşen sütunlar */
+    gap: 1.5rem; /* Kartlar arası boşluk */
+    margin-top: 2rem;
+}
+
+.education-category {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 6px;
+    border-top: 3px solid var(--accent); /* Üstte vurgu çizgisi */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.education-category:hover {
+    transform: translateY(-5px); /* Hafif yukarı kalkma efekti */
+    box-shadow: 0 10px 20px -10px rgba(10, 25, 47, 0.7);
+}
+
+.education-category h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.education-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.education-category ul li {
+    position: relative;
+    padding-left: 25px; /* Madde imi için boşluk */
+    margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Teknoloji temalı özel madde imleri */
+.education-category ul li::before {
+    content: '›_'; /* Fütüristik, kod benzeri bir im */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
