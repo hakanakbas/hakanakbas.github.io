@@ -5,11 +5,16 @@
 /* ---------------------------------- */
 
 :root {
-    --bg-dark: #0A192F; /* Koyu Lacivert - Matrix ve Teknoloji Hissi */
-    --bg-light: #172a45; /* Hafif Açık Lacivert - Kartlar ve Vurgu Alanları için */
-    --text-primary: #ccd6f6; /* Soluk Mavi/Beyaz - Ana metinler */
-    --text-secondary: #8892b0; /* Gri/Mavi - Alt metinler, açıklamalar */
-    --accent: #64FFDA; /* Elektrik Mavisi/Yeşili - Vurgu rengi, linkler, başlıklar */
+    --bg-dark: #0A192F;
+    /* Koyu Lacivert - Matrix ve Teknoloji Hissi */
+    --bg-light: #172a45;
+    /* Hafif Açık Lacivert - Kartlar ve Vurgu Alanları için */
+    --text-primary: #ccd6f6;
+    /* Soluk Mavi/Beyaz - Ana metinler */
+    --text-secondary: #8892b0;
+    /* Gri/Mavi - Alt metinler, açıklamalar */
+    --accent: #64FFDA;
+    /* Elektrik Mavisi/Yeşili - Vurgu rengi, linkler, başlıklar */
     --font-sans: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', system-ui, sans-serif;
     --font-mono: 'Fira Code', 'Roboto Mono', 'Lucida Console', Monaco, monospace;
 }
@@ -42,16 +47,35 @@ body {
 /* 2. Tipografi ve Yardımcı Sınıflar   */
 /* ---------------------------------- */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); } /* Ekrana göre ölçeklenen başlık */
-h2 { font-size: 2rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2rem; }
-h3 { font-size: 1.5rem; color: var(--accent); }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Ekrana göre ölçeklenen başlık */
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
 
 p {
     margin-bottom: 1rem;
@@ -81,7 +105,8 @@ a:hover {
 
 .cta-button:hover {
     background-color: rgba(100, 255, 218, 0.1);
-    color: var(--accent); /* Hover'da arka planı doldurmayalım, sadece hafif bir parlama olsun */
+    color: var(--accent);
+    /* Hover'da arka planı doldurmayalım, sadece hafif bir parlama olsun */
 }
 
 /* ---------------------------------- */
@@ -90,12 +115,15 @@ a:hover {
 
 .site-header {
     padding: 1rem 0;
-    position: fixed; /* Sayfa kaydırılsa bile üstte sabit kalır */
+    position: fixed;
+    /* Sayfa kaydırılsa bile üstte sabit kalır */
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(10, 25, 47, 0.85); /* Hafif transparan arka plan */
-    backdrop-filter: blur(10px); /* Arka planı bulanıklaştırma efekti */
+    background-color: rgba(10, 25, 47, 0.85);
+    /* Hafif transparan arka plan */
+    backdrop-filter: blur(10px);
+    /* Arka planı bulanıklaştırma efekti */
     z-index: 100;
     transition: top 0.3s;
 }
@@ -111,6 +139,7 @@ a:hover {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
 .logo a:hover {
     background-color: transparent;
     color: var(--accent);
@@ -132,20 +161,24 @@ a:hover {
 /* ---------------------------------- */
 
 main {
-    padding-top: 100px; /* Sabit header'ın içeriği örtmemesi için boşluk */
+    padding-top: 100px;
+    /* Sabit header'ın içeriği örtmemesi için boşluk */
 }
 
 section {
-    padding: 6rem 0; /* Bölümler arası dikey boşluk */
+    padding: 6rem 0;
+    /* Bölümler arası dikey boşluk */
     border-bottom: 1px solid var(--bg-light);
 }
+
 section:last-of-type {
     border-bottom: none;
 }
 
 /* Hero Section */
 .hero-section {
-    min-height: calc(100vh - 100px); /* Ekran yüksekliğinin tamamını kapla (header hariç) */
+    min-height: calc(100vh - 100px);
+    /* Ekran yüksekliğinin tamamını kapla (header hariç) */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,12 +186,14 @@ section:last-of-type {
 
 .hero-section .subtitle {
     font-size: 1.25rem;
-    max-width: 700px; /* Çok uzun satırları engelle */
+    max-width: 700px;
+    /* Çok uzun satırları engelle */
 }
 
 .hero-section .social-links {
     margin-top: 1.5rem;
 }
+
 .hero-section .social-links a {
     margin-right: 1.5rem;
     font-size: 1rem;
@@ -174,4 +209,101 @@ section:last-of-type {
     color: var(--text-secondary);
     font-family: var(--font-mono);
     font-size: 0.8rem;
+}
+
+
+/* File: assets/css/main.css (add to the end) */
+
+/* ---------------------------------- */
+/* 6. Projects Accordion             */
+/* ---------------------------------- */
+
+.accordion-item {
+    border-bottom: 1px solid var(--bg-light);
+    margin-bottom: 1rem;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: transparent;
+    /* Arka planı transparan yapıp border ekleyeceğiz */
+    border: 1px solid var(--bg-light);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: -1px;
+    /* Borderların üst üste binmemesi için */
+    font-size: 1.2rem;
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover,
+.accordion-header.active {
+    background-color: var(--bg-light);
+    color: var(--accent);
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.3s ease-in-out;
+    font-weight: 300;
+}
+
+/* Başlık aktif olduğunda, '+' ikonunu 45 derece döndürerek 'x' yap */
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    /* Animasyonu daha yumuşak hale getir */
+    padding: 0 1.5rem;
+    background-color: rgba(23, 42, 69, 0.5);
+    /* Hafif transparan bir arka plan */
+    border-left: 2px solid var(--accent);
+    margin-left: 1px;
+}
+
+.accordion-content p {
+    margin: 0;
+    padding: 1rem 0;
+    color: var(--text-secondary);
+}
+
+.accordion-content p:first-of-type {
+    padding-top: 1.5rem;
+}
+
+.accordion-content p:last-of-type {
+    padding-bottom: 1.5rem;
+}
+
+.accordion-content strong {
+    color: var(--text-primary);
+}
+
+/* ---------------------------------- */
+/* 7. Contact Section (Minimalist)    */
+/* ---------------------------------- */
+
+.contact-section .contact-container {
+    text-align: center;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto; /* Üst 0, sağ/sol auto, alt 2rem */
 }
