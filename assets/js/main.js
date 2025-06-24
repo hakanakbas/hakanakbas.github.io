@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearEl) {
         currentYearEl.textContent = new Date().getFullYear();
     }
-    
+
     // --- Email Obfuscation (Botlara karşı koruma) ---
     const emailLink = document.getElementById('emailLink');
     if (emailLink) {
@@ -33,6 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const domain = 'gmail.com';
             // Mailto linkini tıklandığı anda oluştur ve tarayıcının e-posta istemcisini aç
             window.location.href = `mailto:${user}@${domain}`;
+        });
+    }
+
+    // File: assets/js/main.js (add to the end)
+
+    // --- Mobil Menü (Hamburger) Fonksiyonelliği ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.querySelector('.main-navigation');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         });
     }
 
