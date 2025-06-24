@@ -307,3 +307,89 @@ section:last-of-type {
     max-width: 600px;
     margin: 0 auto 2rem auto; /* Üst 0, sağ/sol auto, alt 2rem */
 }
+
+
+/* ---------------------------------- */
+/* 8. Journey Timeline             */
+/* ---------------------------------- */
+
+.journey-section .timeline {
+    position: relative;
+    max-width: 750px;
+    margin: 2rem auto;
+    padding-left: 50px; /* Sol tarafta çizgi ve noktalar için boşluk bırak */
+}
+
+/* Dikey ana çizgi */
+.journey-section .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--bg-light);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Çizgi üzerindeki dairesel işaretleyici (marker) */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -39px; /* Konumu hesapla: -padding_left + line_position - (marker_width/2) -> -50 + 20 - 9 = -39 */
+    top: 18px; /* Başlıkla aynı hizada olması için ayarla */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark); /* Arka plan rengiyle aynı */
+    border: 3px solid var(--accent);
+    z-index: 1; /* Ana çizginin üzerinde görünmesini sağla */
+}
+
+.timeline-item h3 {
+    margin-top: 0;
+    color: var(--text-primary); /* Vurgu rengi yerine ana metin rengi, daha temiz durur */
+}
+
+.timeline-item .date {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    display: block; /* Tam satır kaplaması için */
+}
+
+.timeline-item ul {
+    list-style-type: none; /* Varsayılan madde imlerini kaldır */
+    padding-left: 0;
+}
+
+.timeline-item ul li {
+    position: relative;
+    padding-left: 20px; /* Madde imi için boşluk bırak */
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* Temamıza uygun özel madde imleri */
+.timeline-item ul li::before {
+    content: '›'; /* '>', '»', veya '–' gibi bir karakter kullanabiliriz */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
